@@ -16,6 +16,7 @@ RUN git clone https://github.com/sstarcher/helm-release
 
 RUN helm init --client-only --skip-refresh && \
     helm plugin install https://static.moonswitch.com/helm-release/helm-release_0.2.0_linux_amd64.tar.gz && \
+    chmod +x /root/.helm/plugins/helm-release_0.2.0_linux_amd64/helm-release && \
     helm plugin install https://github.com/chartmuseum/helm-push --version 0.7.1
 
 CMD ["helm"]
